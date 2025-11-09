@@ -3,11 +3,9 @@ package app.filter;
 import app.model.User;
 import app.service.SecurityService;
 import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.*;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/expenses/*", "/goals/*", "/groups/*", "/dashboard"})
 public class AuthFilter implements Filter {
     private SecurityService securityService;
 

@@ -1,44 +1,29 @@
 :root {
-    --primary: #aa96da;
-    --primary-light: #9a86ca;
-    --success: #9de0ad;
-    --danger: #ff6b6b;
-    --edit-action: #a8d8ea;
-    --readmore-action: #fcbad3;
-    --light: #f8f9fa;
-    --background: #fafafa;
-    --card-bg: #ffffff;
-    --dark: #3a3a3a;
-    --text: #5d5d5d;
-    --border: #e8e8e8;
+    --primary: #443D4B;      /* Основной темный */
+    --primary-light: #745A6B; /* Светлее основной */
+    --secondary: #9D9167;     /* Золотистый */
+    --accent: #84592B;        /* Коричневый акцент */
+    --light: #F5F1E8;         /* Светлый фон */
+    --card-bg: #FFFFFF;       /* Белый */
+    --text-dark: #3A332C;     /* Темный текст */
+    --text-muted: #7A6E5F;    /* Серый текст */
+    --border: #D9D1C7;        /* Границы */
 }
 
 body {
-    background-color: var(--background);
-    color: var(--text);
+    background-color: var(--light);
+    color: var(--text-dark);
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-.navbar {
-    background-color: var(--primary);
-}
-
-.navbar-brand {
-    font-weight: 700;
+.navbar-dark.bg-primary {
+    background-color: var(--primary) !important;
 }
 
 .card {
     border: 1px solid var(--border);
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
     background-color: var(--card-bg);
-}
-
-.card-header {
-    background-color: transparent;
-    border-bottom: 1px solid var(--border);
-    color: var(--dark);
-    font-weight: 600;
 }
 
 .btn-primary {
@@ -51,63 +36,30 @@ body {
     border-color: var(--primary-light);
 }
 
-.progress {
-    height: 8px;
-    background-color: var(--border);
-}
-
-.progress-bar {
-    background-color: var(--success);
-    transition: width 0.5s ease;
-}
-
-.balance-card {
-    background-color: var(--primary);
-    color: white;
-    border: none;
-}
-
-.income-card {
-    background-color: var(--success);
-    color: var(--dark);
-    border: none;
-}
-
-.expense-card {
-    background-color: var(--danger);
-    color: white;
-    border: none;
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--text-dark);
 }
 
 .form-control {
     border: 1px solid var(--border);
     border-radius: 6px;
-    color: var(--text);
 }
 
 .form-control:focus {
-    border-color: var(--primary-light);
-    box-shadow: 0 0 0 2px rgba(170, 150, 218, 0.15);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(132, 89, 43, 0.1);
 }
 
-.badge {
-    font-weight: 500;
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+a {
+    color: var(--accent);
 }
 
-.alert {
-    border-radius: 6px;
-    border-left: 4px solid;
-}
-
-.list-group-item {
-    border: 1px solid var(--border);
-}
-
-.text-muted {
-    color: var(--text);
-}
-
-footer {
-    position: relative;
-    bottom: 0;
+a:hover {
+    color: var(--primary);
 }

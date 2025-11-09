@@ -78,6 +78,19 @@ public class GoalService {
         return contributionRepository.save(contribution);
     }
 
+    public boolean hasAccess(int userId, int goalId) {
+        Goal goal = goalRepository.findById(goalId);
+        if (goal == null) {
+            return false;
+        }
+
+        if (goal.isGroupGoal()) {
+            return groupMemberRepository.existsByUserAndGroup(userId, goal.getGroupId());
+        } else {
+            return goal.getUserId() == userId;
+        }
+    }
+
     public List<Object[]> getContributionStats(int goalId) {
         return contributionRepository.getContributionStatsByGoal(goalId);
     }

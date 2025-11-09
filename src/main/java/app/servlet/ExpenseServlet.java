@@ -24,6 +24,14 @@ public class ExpenseServlet extends HttpServlet {
         User user = (User) req.getAttribute("currentUser");
         String pathInfo = req.getPathInfo();
 
+        double balance = expenseService.getUserBalance(user.getId());
+        double totalIncome = expenseService.getTotalIncome(user.getId());
+        double totalExpenses = expenseService.getTotalExpenses(user.getId());
+
+        req.setAttribute("balance", balance);
+        req.setAttribute("totalIncome", totalIncome);
+        req.setAttribute("totalExpenses", totalExpenses);
+
         if (pathInfo == null || pathInfo.equals("/")) {
             List<Expense> expenses = expenseService.getUserExpenses(user.getId());
             req.setAttribute("expenses", expenses);
